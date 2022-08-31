@@ -1,0 +1,15 @@
+version: 1.0
+flows:
+  - bizTypes:
+    - 'common'
+    commonConfig:
+      eventType: 'create'
+      eventSourceType: 'agent_event'
+      model: 'EVENTFLOW'
+      way: 'SERIAL'
+      originParamType: 'compos.AgentDetection'
+      builderType: 'compos.ContextBuilder'
+      componentParamType: 'compos.Context'
+    componentConfigs:
+      - name: 'compos.HostCompletionComponent'
+      - name: 'compos.DetectionSaver'
